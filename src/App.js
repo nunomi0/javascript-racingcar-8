@@ -13,6 +13,8 @@ class App {
 
     const game = new RacingGame(carNames);
     game.play(tryCount);
+
+    const winners = game.getWinners();
   }
 }
 

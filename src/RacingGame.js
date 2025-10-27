@@ -22,4 +22,11 @@ export class RacingGame {
       this.playRound();
     }
   }
+
+  getWinners() {
+    const max = Math.max(...this.cars.map((car) => car.position));
+    return this.cars
+      .filter((car) => car.position === max)
+      .map((car) => car.name);
+  }
 }
