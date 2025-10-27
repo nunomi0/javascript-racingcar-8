@@ -1,5 +1,5 @@
 import { readCarNames, readTryCount } from "./input.js";
-import { validateCarNames } from "./validator.js";
+import { validateCarNames, validateTryCount } from "./validator.js";
 
 class App {
   async run() {
@@ -7,6 +7,7 @@ class App {
     const carNames = carNamesRaw.split(",").map((name) => name.trim());
     validateCarNames(carNames);
     const tryCount = await readTryCount();
+    validateTryCount(tryCount);
   }
 }
 

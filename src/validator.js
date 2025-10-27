@@ -7,3 +7,19 @@ export function validateCarNames(names) {
     throw new Error("[ERROR] 자동차 이름은 5자 이하만 가능합니다.");
   }
 }
+
+export function validateTryCount(count) {
+  const num = Number(count);
+
+  if (Number.isNaN(num)) {
+    throw new Error("[ERROR] 시도 횟수는 숫자여야 합니다.");
+  }
+
+  if (!Number.isInteger(num)) {
+    throw new Error("[ERROR] 시도 횟수는 정수여야 합니다.");
+  }
+
+  if (num<=0) {
+    throw new Error("[ERROR] 시도 횟수는 0보다 커야 합니다.");
+  }
+}
