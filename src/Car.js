@@ -4,6 +4,10 @@ export class Car {
     this.position = 0;
   }
 
+  canMove(randomValue){
+    return randomValue >= 4;
+  }
+
   move() {
     this.position += 1;
   }
