@@ -28,3 +28,42 @@
 
 ### 테스트
 - [x] validator
+- [x] car
+- [x] RacingGame
+- [x] output
+
+## 프로젝트 구조
+```
+src/
+├── App.js              # 프로그램 실행 흐름 관리 (입력 → 검증 → 게임 → 출력)
+├── index.js            # 프로그램 실행 진입점
+├── Car.js              # 자동차 클래스 (이름, 위치, 이동 로직)
+├── RacingGame.js       # 게임 진행 및 우승자 계산
+├── input.js            # 사용자 입력 처리
+├── output.js           # 게임 결과 및 우승자 출력
+├── validator.js        # 입력값 유효성 검사
+└── utils/
+    └── randomUtils.js  # 랜덤 숫자 생성 (0~9)
+__tests__/              # 단위 테스트 모음
+```
+
+## 실행 결과
+```bash
+경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)
+pobi,woni,jun
+시도할 횟수는 몇 회인가요?
+3
+pobi : 
+woni : -
+jun : -
+
+pobi : -
+woni : --
+jun : -
+
+pobi : -
+woni : ---
+jun : -
+
+최종 우승자 : woni
+```
