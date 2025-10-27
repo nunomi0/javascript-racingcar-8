@@ -1,10 +1,12 @@
+const MAX_CAR_NAME_LENGTH = 5;
+
 export function validateCarNames(names) {
   if (names.some((name) => name.length === 0)) {
     throw new Error("[ERROR] 이름에 공백이 포함되어 있습니다.");
   }
   
-  if (names.some((name) => name.trim().length > 5)) {
-    throw new Error("[ERROR] 자동차 이름은 5자 이하만 가능합니다.");
+  if (names.some((name) => name.trim().length > MAX_CAR_NAME_LENGTH)) {
+    throw new Error(`[ERROR] 자동차 이름은 ${MAX_CAR_NAME_LENGTH}자 이하만 가능합니다.`);
   }
 }
 
