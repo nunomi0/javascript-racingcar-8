@@ -1,5 +1,6 @@
 import { Car } from "./Car.js";
 import { getRandomNumber } from "./utils/randomUtils.js";
+import { printRoundResult } from "./output.js";
 
 export class RacingGame {
   constructor(carNames) {
@@ -12,7 +13,8 @@ export class RacingGame {
       if (car.canMove(randomValue)) {
         car.move();
       }
-    })
+    });
+    printRoundResult(this.cars);
   }
 
   play(tryCount) {
