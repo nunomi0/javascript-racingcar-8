@@ -1,6 +1,7 @@
 import { readCarNames, readTryCount } from "./input.js";
 import { validateCarNames, validateTryCount } from "./validator.js";
 import { RacingGame } from "./RacingGame.js";
+import { printWinners } from "./output.js";
 
 class App {
   async run() {
@@ -15,6 +16,7 @@ class App {
     game.play(tryCount);
 
     const winners = game.getWinners();
+    printWinners(winners);
   }
 }
 
