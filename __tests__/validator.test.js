@@ -14,6 +14,12 @@ describe("자동차 이름 유효성 검사", () => {
     );
   });
 
+  test("이름이 중복되면 에러를 발생시킨다", () => {
+    expect(() => validateCarNames(["pobi", "woni", "pobi"])).toThrow(
+      "[ERROR] 자동차 이름은 중복될 수 없습니다."
+    );
+  });
+
   test("모든 이름이 조건을 만족하면 통과한다", () => {
     expect(() => validateCarNames(["pobi", "jun", "woni"])).not.toThrow();
   });

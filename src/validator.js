@@ -8,6 +8,11 @@ export function validateCarNames(names) {
   if (names.some((name) => name.trim().length > MAX_CAR_NAME_LENGTH)) {
     throw new Error(`[ERROR] 자동차 이름은 ${MAX_CAR_NAME_LENGTH}자 이하만 가능합니다.`);
   }
+
+  const uniqueNames = new Set(names);
+  if (uniqueNames.size !== names.length) {
+    throw new Error("[ERROR] 자동차 이름은 중복될 수 없습니다.");
+  }
 }
 
 export function validateTryCount(count) {
