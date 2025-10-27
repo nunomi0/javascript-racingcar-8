@@ -14,4 +14,10 @@ export class RacingGame {
       }
     })
   }
+
+  play(tryCount) {
+    for (let i = 0; i<tryCount; i++){
+      this.playRound();
+    }
+  }
 }
