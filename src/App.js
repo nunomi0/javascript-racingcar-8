@@ -1,13 +1,15 @@
 import { Console } from "@woowacourse/mission-utils";
 import InputView from "./InputView.js";
+import { parseCarNames } from "./Validator.js";
 
 class App {
   async run() {
     const carNames = await InputView.readCarNames();
     const tryCount = await InputView.readTryCount();
 
-    Console.print(carNames);
-    Console.print(tryCount);
+    const names = parseCarNames(carNames);
+    Console.print(names);
+
   }
 }
 
