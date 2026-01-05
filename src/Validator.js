@@ -5,5 +5,9 @@ export function parseCarNames(input) {
   이름이 5자 이하가 아닌 경우
   */
 
-  return input.split(",");
+  const carNames = input.split(",");
+  for (const carName of carNames){
+    if (carName.length>5) throw new Error("[ERROR]");
+  }
+  return carNames;
 }
