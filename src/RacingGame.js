@@ -15,4 +15,22 @@ export default class RacingGame {
       }
     });
   }
+
+  getCars() {
+    return this.cars;
+  }
+
+  getWinners() {
+    let maxPosition = 0;
+    for (let i = 0; i<this.cars.length; i++){
+      maxPosition=Math.max(maxPosition, this.cars[i].getPosition());
+    }
+
+    const winners = [];
+    for (let i = 0; i<this.cars.length; i++){
+      if (this.cars[i].getPosition()===maxPosition) winners.push(this.cars[i].getName());
+    }
+
+    return winners;
+  }
 }

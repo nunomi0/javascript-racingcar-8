@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import InputView from "./InputView.js";
 import RacingGame from "./RacingGame.js";
+import OutputView from "./OuputView.js";
 
 class App {
   async run() {
@@ -9,9 +10,14 @@ class App {
     
     const racingGame = new RacingGame(carNames);
 
+    OutputView.printResultHeader();
+
     for (let i = 0; i<tryCount; i++){
       racingGame.playRound();
+      OutputView.printRoundResult(racingGame.getCars());
     }
+
+    OutputView.printFinalWinner(racingGame.getWinners());
   }
 }
 
