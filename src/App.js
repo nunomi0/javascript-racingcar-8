@@ -1,15 +1,17 @@
 import { Console } from "@woowacourse/mission-utils";
 import InputView from "./InputView.js";
-import { parseCarNames } from "./Validator.js";
+import RacingGame from "./RacingGame.js";
 
 class App {
   async run() {
     const carNames = await InputView.readCarNames();
     const tryCount = await InputView.readTryCount();
+    
+    const racingGame = new RacingGame(carNames);
 
-    const names = parseCarNames(carNames);
-    Console.print(names);
-
+    for (let i = 0; i<tryCount; i++){
+      racingGame.playRound();
+    }
   }
 }
 
