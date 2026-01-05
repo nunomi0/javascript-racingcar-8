@@ -10,6 +10,9 @@ export default class RacingGame {
   playRound() {
     this.cars.forEach((car) => {
       const number = Random.pickNumberInRange(0,9);
+      if (number>=4){
+        car.move();
+      }
     });
   }
 }
